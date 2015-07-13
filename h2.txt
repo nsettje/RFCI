@@ -1,0 +1,10 @@
+#molecule
+h2
+#basis
+STO-3G
+#rxncood
+1.000000
+#method
+RFCI
+#roots
+1

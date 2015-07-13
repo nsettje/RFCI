@@ -1,0 +1,10 @@
+#molecule
+h2o
+#basis
+STO-3G
+#rxncood
+0.183665
+#method
+RFCI
+#roots
+1

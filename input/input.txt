@@ -1,0 +1,10 @@
+#molecule
+mmmmm
+#basis
+bbbbb
+#rxncood
+rrrrr
+#method
+RFCI
+#roots
+1

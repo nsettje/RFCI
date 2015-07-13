@@ -1,0 +1,10 @@
+#molecule
+bh
+#basis
+STO-3G
+#rxncood
+1.500000
+#method
+FCI
+#roots
+1
