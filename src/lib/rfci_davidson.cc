@@ -199,7 +199,7 @@ int rfci_davidson(int PorQ, RFCI_wfn *wfn, mol_constant *mol, char * output, int
 			if(PorQ==1){
 				for(i=built;i<L;i++){
 					get_NO_augmented_sigmaP(&(c0[0][0]),&(b[i][0]), &(Q[0][(n_terms-1)*bstringcount]), &(P[0][0]), &(Q[0][0]), &(sigma[i][0]), n_terms,alphae, betae, nmo, mo_OEIprime, mo_TEI);
-					get_overlapP(&(c0[0][0]),&(b[i][0]), &(Q[0][(n_terms-1)*bstringcount]), &(P[0][0]), &(Q[0][0]), &(eig_overlap[i][0]), n_terms,alphae, betae, nmo);
+					//get_overlapP(&(c0[0][0]),&(b[i][0]), &(Q[0][(n_terms-1)*bstringcount]), &(P[0][0]), &(Q[0][0]), &(eig_overlap[i][0]), n_terms,alphae, betae, nmo);
 					printf("Built sigma %d\n",built);
 					built++;
 				}
@@ -207,7 +207,7 @@ int rfci_davidson(int PorQ, RFCI_wfn *wfn, mol_constant *mol, char * output, int
 			else{
 				for(i=built;i<L;i++){
 					get_NO_augmented_sigmaQ(&(c0[0][0]),&(P[0][(n_terms-1)*astringcount]),&(b[i][0]), &(P[0][0]), &(Q[0][0]), &(sigma[i][0]), n_terms,alphae, betae, nmo, mo_OEIprime, mo_TEI);
-					get_overlapP(&(c0[0][0]), &(b[i][0]),&(P[0][(n_terms-1)*astringcount]),&(Q[0][0]),&(P[0][0]), &(eig_overlap[i][0]), n_terms,alphae, betae, nmo);
+					//get_overlapP(&(c0[0][0]), &(b[i][0]),&(P[0][(n_terms-1)*astringcount]),&(Q[0][0]),&(P[0][0]), &(eig_overlap[i][0]), n_terms,alphae, betae, nmo);
 					printf("Built sigma %d\n",built);
 					built++;
 				}
@@ -418,7 +418,7 @@ int rfci_davidson(int PorQ, RFCI_wfn *wfn, mol_constant *mol, char * output, int
 		else{
 			if(PorQ == 1){
 				for(i=1;i<new_dim;i++){	
-					get_overlapP(&(c0[0][0]),&(b[i][0]), &(Q[0][(n_terms-1)*bstringcount]), &(P[0][0]), &(Q[0][0]), &(eig_overlap[i][0]), n_terms,alphae, betae, nmo);
+					//get_overlapP(&(c0[0][0]),&(b[i][0]), &(Q[0][(n_terms-1)*bstringcount]), &(P[0][0]), &(Q[0][0]), &(eig_overlap[i][0]), n_terms,alphae, betae, nmo);
 					for(j=0;j<i;j++){
 						double proj = C_DDOT(N,eig_overlap[i],1,b[j],1);
 						C_DAXPY(N,-proj,b[j],1,b[i],1);
@@ -428,7 +428,7 @@ int rfci_davidson(int PorQ, RFCI_wfn *wfn, mol_constant *mol, char * output, int
 			}
 			else{
 				for(i=1;i<new_dim;i++){	
-					get_overlapP(&(c0[0][0]), &(b[i][0]),&(P[0][(n_terms-1)*astringcount]),&(Q[0][0]),&(P[0][0]), &(eig_overlap[i][0]), n_terms,alphae, betae, nmo);
+					//get_overlapP(&(c0[0][0]), &(b[i][0]),&(P[0][(n_terms-1)*astringcount]),&(Q[0][0]),&(P[0][0]), &(eig_overlap[i][0]), n_terms,alphae, betae, nmo);
 					for(j=0;j<i;j++){
 						double proj = C_DDOT(N,eig_overlap[i],1,b[j],1);
 						C_DAXPY(N,-proj,b[j],1,b[i],1);
